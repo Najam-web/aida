@@ -1,0 +1,8 @@
+[13-Feb-2026 11:27:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/a11nn9tshiz6/public_html/wp-content/themes/twentytwentyfour/functions.php:147
+Stack trace:
+#0 {main}
+  thrown in /home/a11nn9tshiz6/public_html/wp-content/themes/twentytwentyfour/functions.php on line 147
+[04-May-2026 21:47:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home/a11nn9tshiz6/public_html/wp-content/themes/twentytwentyfour/functions.php:147
+Stack trace:
+#0 {main}
+  thrown in /home/a11nn9tshiz6/public_html/wp-content/themes/twentytwentyfour/functions.php on line 147

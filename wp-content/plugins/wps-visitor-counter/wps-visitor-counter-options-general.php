@@ -1,0 +1,218 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+if (!current_user_can('manage_options')) {
+	wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'wps-visitor-counter' ) );
+}
+
+
+
+$wps_option_data = wps_visitor_option_data(1);
+?>
+<div class="wrap">
+	<div id="icon-options-general" class="icon32"></div>
+    <h2><?php esc_html_e( 'Plugin Options WPS Visitor Counter', 'wps-visitor-counter' ); ?></h2><br/>
+    <div class="wpsvc_plugins_wrap"><!-- start mvc wrap -->
+	<div class="wpsvc_right_sidebar"><!-- start right sidebar -->
+		
+		
+        <!-- Support Banner -->
+        <div class="wpsvc_plugins_text">
+        	<div class="wpsvc_option_wrap">
+				<h3 class="hndle"><?php esc_html_e( 'Recommended Web Hosting', 'wps-visitor-counter' ); ?></h3>
+				
+				
+				<!----fastcomet----->
+</script>
+<noscript>
+<h2><a href="http://www.fastcomet.com/">264x264 Robot Clipart (animated)</a></h2>
+</noscript>
+				<!----fastcomet end----->
+				
+			</div>
+		</div>
+        
+		
+		<div class="wpsvc_plugins_text">
+        	<div class="wpsvc_option_wrap">
+        		<?php 
+        		$wps_display_field = $wps_option_data['display_field'];
+        		$wps_display_field_arr = explode(",",$wps_display_field);
+        		?>
+        		<form method="post" action="<?php echo esc_url_raw( isset( $_SERVER["REQUEST_URI"] ) ? wp_unslash( $_SERVER["REQUEST_URI"] ) : '' ); ?>" class="wps_plugin_main_form">
+        			<?php wp_nonce_field('wps_my_front_end_setting'); ?>
+				<div><label for="wps_visitor_title"><?php esc_html_e( 'Title:', 'wps-visitor-counter' ); ?> <input class="widefat" id="wps_visitor_titletitle" name="wps_visitor_title" type="text" value="<?php echo esc_attr($wps_option_data['visitor_title']);?>" /></label></div>
+				<?php
+wp_enqueue_script('wp-color-picker');
+wp_enqueue_style( 'wp-color-picker' );
+?>
+	<div><label for="wps_visitor_font_color"><?php esc_html_e( 'Font Color:', 'wps-visitor-counter' ); ?> </label><input class="widefat" id="wps_visitor_font_color" data-default-color="#000000" name="wps_visitor_font_color" type="text" value="<?php echo esc_attr($wps_option_data['font_color']);?>" /></div>
+<script type="text/javascript">
+				jQuery(document).ready(function($) {   
+					$('#wps_visitor_font_color').wpColorPicker();
+				});             
+				</script>
+
+	<div><font size='2'><?php esc_html_e( 'To change the font color, select the color with color picker.', 'wps-visitor-counter' ); ?> </font></div>
+	<div><font size='3'><b><?php esc_html_e( 'Plugin Options', 'wps-visitor-counter' ); ?></b></font></div>
+	<!-- UPDATE PLAN -->
+	<div><label for="wps_visitor_user_start">Users Count Start: <input class="widefat" id="wps_visitor_user_start" name="wps_visitor_user_start" type="number" min="0" value="<?php echo esc_attr($wps_option_data['user_start']);?>" /></label></div>
+	<div><font size='2'>Fill in with numbers to start the initial calculation of the user counter, if the empty counter will start from 1</font></div>
+	<div><label for="wps_visitor_views_start">views Start: <input class="widefat" id="wps_visitor_views_start" name="wps_visitor_views_start" type="number" min="0" value="<?php echo esc_attr($wps_option_data['views_start']);?>" /></label></div>
+	<div><font size='2'>Fill in the numbers to start the initial calculation of the views, if the empty views will start from 1</font></div>
+	<!-- END UPDATE -->
+	<div><label for="wps_visitor_today_user"><?php esc_html_e( 'Enable Users Today display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("today_user", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_today_user" name="wps_visitor_today_user" /></label></div>
+	<div><label for="wps_visitor_yesterday_user"><?php esc_html_e( 'Enable Users Yesterday display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("yesterday_user", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_yesterday_user" name="wps_visitor_yesterday_user" /></label></div>
+
+	<div><label for="wps_visitor_last7_day_user"><?php esc_html_e( 'Enable Users Last 7 Days display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("last7_day_user", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_last7_day_user" name="wps_visitor_last7_day_user" /></label></div>
+
+	<div><label for="wps_visitor_last30_day_user"><?php esc_html_e( 'Enable Users Last 30 Days display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("last30_day_user", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_last30_day_user" name="wps_visitor_last30_day_user" /></label></div>
+
+	<div><label for="wps_visitor_month_user"><?php esc_html_e( 'Enable Users This Month display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("month_user", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_month_user" name="wps_visitor_month_user" /></label></div>
+	<div><label for="wps_visitor_year_user"><?php esc_html_e( 'Enable Users This Year display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("year_user", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_year_user" name="wps_visitor_year_user" /></label></div>
+	<div><label for="wps_visitor_total_user"><?php esc_html_e( 'Enable Total Users display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("total_user", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_total_user" name="wps_visitor_total_user" /></label></div>
+	<div><label for="wps_visitor_today_view"><?php esc_html_e( 'Enable views Today display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("today_view", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_today_view" name="wps_visitor_today_view" /></label></div>
+
+	<div><label for="wps_visitor_yesterday_view"><?php esc_html_e( 'Enable views Yesterday display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("yesterday_view", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_yesterday_view" name="wps_visitor_yesterday_view" /></label></div>
+
+	
+	<div><label for="wps_visitor_last7_day_view"><?php esc_html_e( 'Enable views Last 7 Days display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("last7_day_view", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_last7_day_view" name="wps_visitor_last7_day_view" /></label></div>
+
+	<div><label for="wps_visitor_last30_day_view"><?php esc_html_e( 'Enable views Last 30 Days display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("last30_day_view", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_last30_day_view" name="wps_visitor_last30_day_view" /></label></div>
+
+
+	<div><label for="wps_visitor_month_view"><?php esc_html_e( 'Enable views This Month display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("month_view", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_month_view" name="wps_visitor_month_view" /></label></div>
+	<div><label for="wps_visitor_year_view"><?php esc_html_e( 'Enable views This Year display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("year_view", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_year_view" name="wps_visitor_year_view" /></label></div>
+
+
+
+	<div><label for="wps_visitor_total_view"><?php esc_html_e( 'Enable Total views display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("total_view", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_total_view" name="wps_visitor_total_view" /></label></div>
+	<div><label for="wps_visitor_online_view"><?php esc_html_e( 'Enable Whos Online display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("online_view", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_online_view" name="wps_visitor_online_view" /></label></div>
+	<div><label for="wps_visitor_ip_display"><?php esc_html_e( 'Enable IP address display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("ip_display", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_ip_display" name="wps_visitor_ip_display" /></label></div>
+	<div><label for="wps_visitor_server_time"><?php esc_html_e( 'Enable Server Time display?', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" <?php if (in_array("server_time", $wps_display_field_arr)) {echo "checked";} ?> id="wps_visitor_server_time" name="wps_visitor_server_time" /></label></div>
+	<div><label for="wps_visitor_wpsvc_align"><?php esc_html_e( 'Plugins align?', 'wps-visitor-counter' ); ?> 
+	<select class="select" id="wps_visitor_wpsvc_align" name="wps_visitor_wpsvc_align">
+	<option value="left"><?php esc_html_e( 'Left', 'wps-visitor-counter' ); ?></option>
+	<option value="left" <?php if($wps_option_data['visitor_wpsvc_align'] == 'left'){echo "selected";}?>><?php esc_html_e( 'Left', 'wps-visitor-counter' ); ?></option>
+	<option value="center" <?php if($wps_option_data['visitor_wpsvc_align'] == 'center'){echo "selected";}?>><?php esc_html_e( 'Center', 'wps-visitor-counter' ); ?></option>
+	<option value="right" <?php if($wps_option_data['visitor_wpsvc_align'] == 'right'){echo "selected";}?>><?php esc_html_e( 'Right', 'wps-visitor-counter' ); ?></option>
+	</select></label></div>
+					<input type="submit" name="wps_view_setting" class="button-primary" value="<?php echo esc_attr__( 'Save Changes', 'wps-visitor-counter' ); ?>" /></form>
+			</div>
+		</div>
+		<div class="wpsvc_plugins_text">
+        	<div class="wpsvc_option_wrap">
+        		<h3 class="hndle"><?php esc_html_e( 'The way of use', 'wps-visitor-counter' ); ?></h3>
+        		<p><?php esc_html_e( 'Use this "[wps_visitor_counter]" shortcode or use in your registered widget.', 'wps-visitor-counter' ); ?></p>
+        	</div>
+        </div>
+		<div class="wpsvc_plugins_text">
+			<div class="wpsvc_option_wrap">
+				<h3 class="hndle"><?php esc_html_e( 'Reset Plugin Data', 'wps-visitor-counter' ); ?></h3>
+				<form method="post" action="<?php echo esc_url_raw( isset( $_SERVER["REQUEST_URI"] ) ? wp_unslash( $_SERVER["REQUEST_URI"] ) : '' ); ?>">
+					<?php wp_nonce_field('wps_table_reset'); ?>
+			        <p style="margin-top:20px;" >
+					<?php esc_html_e( 'Check for reset', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" id="reset_wpsvc" name="reset_wpsvc" />
+			        <input type="submit" class="button-primary" value="<?php echo esc_attr__( 'Reset Data', 'wps-visitor-counter' ); ?>" />
+			        </p>
+				</form>
+			</div>
+		</div>
+    </div><!-- End Right sidebar -->
+
+
+
+
+    <div class="wpsvc_left_sidebar"><!-- start Left sidebar -->
+    <div class="wpsvc_plugins_text">
+	<div class="wpsvc_option_wrap wps_follow_button">
+		<h3 class="hndle"><?php esc_html_e( 'Follow us', 'wps-visitor-counter' ); ?></h3>
+		<a href="https://www.facebook.com/TechMix365"><img src="<?php echo esc_url( plugins_url( 'counter/fb.png', __FILE__ ) ); ?>" alt=""></a>
+		<a href="https://twitter.com/TechMix365"><img src="<?php echo esc_url( plugins_url( 'counter/twitter.png', __FILE__ ) ); ?>" alt=""></a>
+	</div>
+	</div>
+	<div class="wpsvc_option_wrap">
+	<div class="wpsvc_plugins_text">
+	<h3 class="hndle"><?php esc_html_e( 'Image Counter', 'wps-visitor-counter' ); ?></h3>
+	<form method="post" action="<?php echo esc_url_raw( isset( $_SERVER["REQUEST_URI"] ) ? wp_unslash( $_SERVER["REQUEST_URI"] ) : '' ); ?>">
+		<?php wp_nonce_field('wps_my_front_end_style'); ?>
+
+
+       <?php
+            $data = wps_visitor_counter_styles(WP_CONTENT_DIR . '/plugins/wps-visitor-counter/styles/');
+            foreach ($data as $parent_folder => $records) {
+                foreach ($records as $style_folder => $style_records) {
+                    foreach ($style_records as $style => $test) {
+                        preg_match('/styles\/(.*?)\/(.*?)\//', $test, $match);
+                        $groups[$match[1]][] = $match[2];
+                    }
+                }
+            }
+        ?>
+		  <?php
+            foreach ($groups as $style_name => $style) {
+?>
+					
+ 					<p><b>Choose one of the <?php echo esc_html( $style_name ); ?> counter styles below:</b></p>
+						<table class="form-table">
+						<?php
+                foreach ($style as $name) {
+                    ?>
+                    	<tr>
+                		<td>
+                		<input type="radio" id="img1" name="wps_visitor_counter_style" value="<?php echo esc_attr( 'image/'.$name ); ?>" <?php if($wps_option_data['style'] == 'image/'.$name){echo "checked";}?>/>
+                		<img src='<?php echo esc_url( plugin_dir_url( __FILE__ ) . 'styles/' . esc_attr( $style_name ) . '/' . esc_attr( $name ) . '/11.jpg' ); ?>' alt="<?php echo esc_attr( $style_name . ' ' . $name ); ?>">
+        
+                		</td>
+                	</tr>
+					  <?php
+                }
+			?>
+			<tr>
+                		<td>
+                		<input type="radio" id="img1" name="wps_visitor_counter_style" value="text/effect-black" <?php if($wps_option_data['style'] == 'text/effect-black'){echo "checked";}?>/>
+                		<div class="wps_text_glowing effect-black">
+							<span>0</span>
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+						</div>
+        
+                		</td>
+                	</tr>
+                	<tr>
+                		<td>
+                		<input type="radio" id="img1" name="wps_visitor_counter_style" value="text/effect-white" <?php if($wps_option_data['style'] == 'text/effect-white'){echo "checked";}?>/>
+                		<div class="wps_text_glowing effect-white">
+							<span>0</span>
+							<span>1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>4</span>
+						</div>
+        
+                		</td>
+                	</tr>
+          
+		  </table>
+         
+<?php
+            }
+        ?>    
+		<p><?php esc_html_e( 'Show powered by WPS Visitor Counter? ', 'wps-visitor-counter' ); ?> <input type="checkbox" class="checkbox" id="wps_visitor_counter_attribution" name="wps_visitor_counter_attribution" <?php if($wps_option_data['show_powered_by'] == 1 ){echo "checked";} ?>/></p>
+        <p style="margin-top:20px;" >
+        <input type="submit" name="style_setting" class="button-primary" value="<?php echo esc_attr__( 'Save Changes', 'wps-visitor-counter' ); ?>" />
+        </p>
+	</form>
+	</div>
+	</div>
+	
+	
+	
+	
+	
+
+	</div><!-- End Left sidebar -->
+	</div><!-- End mvc wrap -->
+</div>
+

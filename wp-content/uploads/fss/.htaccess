@@ -1,0 +1,2 @@
+# Protect files - served via WordPress (permission checked)
+Deny from all
